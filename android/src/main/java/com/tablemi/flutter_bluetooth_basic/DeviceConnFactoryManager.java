@@ -417,7 +417,7 @@ public class DeviceConnFactoryManager {
         try {
             r =  this.mPort.readData(buffer);
         } catch (IOException e) {
-
+            mHandler.obtainMessage(Constant.abnormal_Disconnection).sendToTarget();
         }
 
         return  r;
